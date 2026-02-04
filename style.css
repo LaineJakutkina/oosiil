@@ -259,4 +259,31 @@ button {
     color: red;
 
 }
+/* Mobiilivaade (ekranid kuni 768px) */
+@media (max-width: 768px) {
+    .top {
+        flex-direction: column; /* Paneb logo ja menüü üksteise alla */
+        gap: 15px;
+        text-align: center;
+    }
 
+    nav a {
+        display: block; /* Menüü lingid on üksteise all, et oleks kergem vajutada */
+        margin: 10px 0;
+    }
+
+    .glavnoe h1 {
+        font-size: 2.5rem; /* Vähendame pealkirja, et see mahuks ekraanile */
+    }
+
+    .sections {
+        grid-template-columns: 1fr; /* Menüü kaardid on mobiilis ühes veerus */
+        padding: 20px 5%;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 30px;
+        text-align: center;
+    }
+}
