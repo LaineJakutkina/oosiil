@@ -15,7 +15,7 @@
         <a href="#Meist">Meist</a>
         <a href="#Kontakt">Kontakt</a>
     </nav>
-    <a class="button js-open-modal" href="bookingModal">Broneeri</a>
+        <a class="button large" href="#">AVASTA ÖÖ</a>
 </header>
 <section id="Avaleht" class="glavnoe">
     <div class="glavnoe-content">
@@ -111,44 +111,44 @@ Me usume, et kõige siiramad vestlused peetakse küünlavalgel ja kõige julgema
     </div>
 </div>
 <script>
-    const modal = document.getElementById("bookingModal");
-const btns = document.querySelectorAll(".js-open-modal"); // Ищем по классу
-const span = document.querySelector(".close");
-const form = document.getElementById("bookingForm");
+const modal = document.getElementById("bookingModal");
+    const btns = document.querySelectorAll(".button"); // Находит все кнопки с классом button
+    const span = document.getElementsByClassName("close")[0];
+    const form = document.getElementById("bookingForm");
 
-// Открытие модалки
-btns.forEach(btn => {
-    btn.onclick = function(e) {
-        e.preventDefault();
-        modal.style.display = "block";
-    }
-});
+    // Открыть при клике
+    btns.forEach(btn => {
+        if (btn.innerText.includes("Broneeri") || btn.innerText.includes("AVASTA")) {
+            btn.onclick = function(e) {
+                e.preventDefault();
+                modal.style.display = "block";
+            }
+        }
+    });
 
-// Закрытие на крестик
-span.onclick = function() {
-    modal.style.display = "none";
-    document.body.style.overflow = "auto";
-}
-
-// Закрытие при клике вне окна
-window.onclick = function(event) {
-    if (event.target == modal) {
+    // Закрыть при клике на крестик
+    span.onclick = function() {
         modal.style.display = "none";
-        document.body.style.overflow = "auto";
     }
-}
 
-// Отправка формы
-form.onsubmit = function(e) {
-    e.preventDefault();
-    alert("Aitäh! Teie broneering on vastu võetud. Ootame teid öövarjus.");
-    modal.style.display = "none";
-    document.body.style.overflow = "auto";
-    form.reset();
-}
+    // Закрыть при клике вне окна
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Обработка формы
+    form.onsubmit = function(e) {
+        e.preventDefault();
+        alert("Aitäh! Teie broneering on vastu võetud. Ootame teid öövarjus.");
+        modal.style.display = "none";
+        form.reset();
+    }
 </script>
 </body>
 </html>
+
 
 
 
