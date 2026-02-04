@@ -287,3 +287,12 @@ button {
         text-align: center;
     }
 }
+img, .cardimg1, .cardimg2 {
+    max-width: 100%;
+    height: auto;
+}
+.sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
