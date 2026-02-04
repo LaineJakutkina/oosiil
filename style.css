@@ -88,9 +88,10 @@ nav a:hover {
 }
 .sections {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
-    gap: 30px;
-    padding: 40px 5%;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 32px;
+    padding: 30px 50px;
+    align-items: stretch; /* Заставляет все карточки в одном ряду быть одной высоты */
 }
 /* Начальное состояние карточки (невидимая) */
 .card {
@@ -227,6 +228,7 @@ button {
         margin: 5px;
     }
 }
+
 
 
 
