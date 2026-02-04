@@ -140,16 +140,22 @@ Me usume, et kõige siiramad vestlused peetakse küünlavalgel ja kõige julgema
     }
     updateStatus();
 
-    // --- 2. АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ ---
-    const observer = new IntersectionObserver((entries) => {
+document.addEventListener("DOMContentLoaded", function() {
+    // --- 1. АНИМАЦИЯ ПОЯВЛЕНИЯ КАРТОЧЕК ПРИ СКРОЛЛЕ ---
+    const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
             }
         });
-    }, { threshold: 0.1 });
+    }, { 
+        threshold: 0.1 // Анимация начнется, когда 10% карточки будет видно
+    });
 
-    document.querySelectorAll('.card').forEach(card => observer.observe(card));const modal = document.getElementById("bookingModal");
+    // Находим все элементы с классом .card и следим за ними
+    document.querySelectorAll('.card').forEach(card => {
+        scrollObserver.observe(card);
+    });
     const btns = document.querySelectorAll(".button"); // Находит все кнопки с классом button
     const span = document.getElementsByClassName("close")[0];
     const form = document.getElementById("bookingForm");
@@ -186,6 +192,7 @@ Me usume, et kõige siiramad vestlused peetakse küünlavalgel ja kõige julgema
 </script>
 </body>
 </html>
+
 
 
 
