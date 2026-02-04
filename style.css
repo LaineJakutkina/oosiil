@@ -92,16 +92,14 @@ nav a:hover {
     gap: 30px;
     padding: 40px 5%;
 }
+/* Начальное состояние карточки (невидимая) */
 .card {
-    background: rgba(255, 255, 255, 0.03);
-    padding: clamp(20px, 5vw, 40px);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-	opacity: 0;
-    transform: translateY(30px);
+    opacity: 0;
+    transform: translateY(40px);
     transition: all 0.8s ease-out;
 }
+
+/* Состояние, когда карточка появилась в поле зрения (добавляется через JS) */
 .card.show {
     opacity: 1;
     transform: translateY(0);
@@ -229,6 +227,7 @@ button {
         margin: 5px;
     }
 }
+
 
 
 
