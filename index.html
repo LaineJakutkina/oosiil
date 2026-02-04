@@ -74,9 +74,7 @@
         <h1 class="text3">Meist</h1>
         <div class="text2">
             <p>ÖÖSIIL ei ole lihtsalt kohvik. See on koht, kus piir reaalsuse ja muinasjutu vahel hajub koos viimase päikesekiirega. Me avame oma uksed siis, kui maailm jääb magama, et pakkuda peavarju neile, kes otsivad midagi enamat kui lihtsalt toitu.<br>
-
 Meie köök on inspireeritud öö sügavustest: mustad nagu süsi pastad, veripunased kastmed ja magustoidud, mis näevad välja nagu nõiutud rüütlite kingitused. Iga roog on rituaal, iga maitse on loits.<br>
-
 Me usume, et kõige siiramad vestlused peetakse küünlavalgel ja kõige julgemad mõtted sünnivad siis, kui tähistaevas on ainus tunnistaja. Kas oled valmis astuma varju?</p>
 <div class="cardimg7"></div>
         </div>
@@ -84,7 +82,6 @@ Me usume, et kõige siiramad vestlused peetakse küünlavalgel ja kõige julgema
     <blockquote>“Ainus koht, kuhu hing ihkab astuda öövarjus…”</blockquote>
     <span>— Salapärane külaline</span>
 </section>
-
 <footer id="Kontakt" class="footer">
     <div class="footer-left">
         <h3>Tule Meile Külla</h3>
@@ -115,11 +112,9 @@ Me usume, et kõige siiramad vestlused peetakse küünlavalgel ja kõige julgema
 </div>
 <script>
     const modal = document.getElementById("bookingModal");
-    const btns = document.querySelectorAll(".button"); // Находит все кнопки с классом button
+    const btns = document.querySelectorAll(".button");
     const span = document.getElementsByClassName("close")[0];
     const form = document.getElementById("bookingForm");
-
-    // Открыть при клике
     btns.forEach(btn => {
         if (btn.innerText.includes("Broneeri") || btn.innerText.includes("AVASTA")) {
             btn.onclick = function(e) {
@@ -128,20 +123,14 @@ Me usume, et kõige siiramad vestlused peetakse küünlavalgel ja kõige julgema
             }
         }
     });
-
-    // Закрыть при клике на крестик
     span.onclick = function() {
         modal.style.display = "none";
     }
-
-    // Закрыть при клике вне окна
     window.onclick = function(event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
-
-    // Обработка формы
     form.onsubmit = function(e) {
         e.preventDefault();
         alert("Aitäh! Teie broneering on vastu võetud. Ootame teid öövarjus.");
@@ -150,6 +139,4 @@ Me usume, et kõige siiramad vestlused peetakse küünlavalgel ja kõige julgema
     }
 </script>
 </body>
-
 </html>
-
