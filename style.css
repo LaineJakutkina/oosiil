@@ -44,13 +44,12 @@ nav a:hover {
     padding: 10px 20px;
     border-radius: 4px;
     font-size: 14px;
-    display: inline-block;
-    transition: 0.3s;
 }
+
 .button.large {
     padding: 14px 28px;
     font-size: 16px;
-    font-weight: 900;
+	font-weight: 900;
 }
 .glavnoe {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('cafe.png') center/cover no-repeat;
@@ -158,6 +157,13 @@ input {
     border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
 }
+button {
+    background: red;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    cursor: pointer;
+}
 .modal {
     display: none; 
     position: fixed;
@@ -216,4 +222,5 @@ input {
         margin: 5px;
     }
 }
+
 
