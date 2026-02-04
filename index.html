@@ -111,7 +111,44 @@ Me usume, et kõige siiramad vestlused peetakse küünlavalgel ja kõige julgema
     </div>
 </div>
 <script>
-const modal = document.getElementById("bookingModal");
+// --- 1. АВТОМАТИЧЕСКИЙ СТАТУС "ОТКРЫТО" ---
+    function updateStatus() {
+        const now = new Date();
+        const hour = now.getHours();
+        const logo = document.querySelector('.logotip');
+        
+        // Создаем элемент статуса, если его нет
+        let status = document.getElementById('work-status');
+        if (!status) {
+            status = document.createElement('span');
+            status.id = 'work-status';
+            status.style.fontSize = '12px';
+            status.style.marginLeft = '10px';
+            status.style.verticalPath = 'middle';
+            logo.appendChild(status);
+        }
+
+        // Работаем с 18:00 до 06:00
+        if (hour >= 18 || hour < 6) {
+            status.innerHTML = '● AVATUD';
+            status.style.color = '#00ff00'; // Зеленый
+        } else {
+            status.innerHTML = '● SULETUD. OOTAME ÖÖD';
+            status.style.color = '#ff0000'; // Красный
+        }
+    }
+    updateStatus();
+
+    // --- 2. АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));const modal = document.getElementById("bookingModal");
     const btns = document.querySelectorAll(".button"); // Находит все кнопки с классом button
     const span = document.getElementsByClassName("close")[0];
     const form = document.getElementById("bookingForm");
@@ -148,6 +185,7 @@ const modal = document.getElementById("bookingModal");
 </script>
 </body>
 </html>
+
 
 
 
