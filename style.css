@@ -98,6 +98,13 @@ nav a:hover {
     border-radius: 8px;
     display: flex;
     flex-direction: column;
+	opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 .cardimg1, .cardimg2, .cardimg3, .cardimg4, .cardimg5, .cardimg6 {
     width: 100%;
@@ -222,5 +229,6 @@ button {
         margin: 5px;
     }
 }
+
 
 
