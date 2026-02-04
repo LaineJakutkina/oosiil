@@ -1,3 +1,4 @@
+/* ОБЩИЕ СТИЛИ */
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +14,9 @@ body {
 a {
     color: white;
     text-decoration: none;
+    transition: 0.3s;
 }
+/* ШАПКА (HEADER) */
 .top {
     display: flex;
     justify-content: space-between;
@@ -38,19 +41,32 @@ nav a {
 }
 nav a:hover {
     opacity: 1;
+    color: red;
 }
+/* КНОПКИ */
 .button {
     background: red;
     padding: 10px 20px;
     border-radius: 4px;
     font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+    border: none;
+    color: white;
+    transition: 0.3s;
 }
-
+.button:hover {
+    background: darkred;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
 .button.large {
     padding: 14px 28px;
     font-size: 16px;
-	font-weight: 900;
+    font-weight: 900;
 }
+/* ГЛАВНЫЙ БЛОК (HERO) */
 .glavnoe {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('cafe.png') center/cover no-repeat;
     min-height: 100vh;
@@ -71,69 +87,68 @@ nav a:hover {
     opacity: 0.9;
     font-size: 1.1rem;
 }
+/* ЗАГОЛОВКИ СЕКЦИЙ */
 .text {
     margin-top: 50px;
     text-align: center;
 }
-.text2 {
-    max-width: 900px;
-    margin: 0 auto 30px;
-    padding: 0 20px;
-    font-size: clamp(16px, 4vw, 24px);
-    text-align: center;
-}
-.text3 {
-    margin-bottom: 30px;
-    text-align: center;
-}
+/* СЕТКА МЕНЮ (МЕСТО ИСПРАВЛЕНИЯ) */
 .sections {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 32px;
-    padding: 30px 50px;
-    align-items: stretch; /* Заставляет все карточки в одном ряду быть одной высоты */
+    padding: 50px 5%;
+    align-items: stretch; /* Все карточки в ряду одной высоты */
 }
-/* Начальное состояние карточки (невидимая) */
+/* КАРТОЧКИ (МЕСТО ИСПРАВЛЕНИЯ) */
 .card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 35px;
+    border-radius: 12px;
+    display: flex;           /* Включаем Flexbox */
+    flex-direction: column;  /* Элементы вертикально */
+    height: 100%;            /* Занимать всю высоту сетки */
+    
+    /* Анимация */
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.8s ease-out;
 }
-
-/* Состояние, когда карточка появилась в поле зрения (добавляется через JS) */
 .card.show {
     opacity: 1;
     transform: translateY(0);
 }
-.cardimg1, .cardimg2, .cardimg3, .cardimg4, .cardimg5, .cardimg6 {
+.card h2 {
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+}
+.card p {
+    margin-bottom: 25px;
+    flex-grow: 1; /* РАСТЯГИВАЕТ ТЕКСТ, чтобы прижать картинку вниз */
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+/* КАРТИНКИ В КАРТОЧКАХ */
+[class^="cardimg"] {
     width: 100%;
     height: 300px;
-    margin-top: auto;
-    border-radius: 4px;
+    margin-top: auto; /* ФИНАЛЬНОЕ ВЫРАВНИВАНИЕ ПО НИЖНЕМУ КРАЮ */
+    border-radius: 8px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-.cardimg1 { background: url('1.png') center/cover no-repeat; }
-.cardimg2 { background: url('2.png') center/cover no-repeat; }
-.cardimg3 { background: url('3.png') center/cover no-repeat; }
-.cardimg4 { background: url('4.png') center/cover no-repeat; }
-.cardimg5 { background: url('5.png') center/cover no-repeat; }
-.cardimg6 { background: url('6.png') center/cover no-repeat; }
-.cardimg7 {
-    background: url('ofic.png') center/cover no-repeat;
-    margin: 30px auto 0;
-    width: 100%;
-    max-width: 100%;
-    height: clamp(250px, 50vh, 500px);
-    border-radius: 10px;
-}
+.cardimg1 { background-image: url('1.png'); }
+.cardimg2 { background-image: url('2.png'); }
+.cardimg3 { background-image: url('3.png'); }
+.cardimg4 { background-image: url('4.png'); }
+.cardimg5 { background-image: url('5.png'); }
+.cardimg6 { background-image: url('6.png'); }
+/* СЕКЦИЯ MEIST / ОБ ЭТОМ */
 .quote {
     text-align: center;
     padding: 60px 20px;
     font-family: 'Playfair Display', serif;
-}
-.quote blockquote {
-    font-size: clamp(20px, 5vw, 32px);
-    margin-bottom: 15px;
-    font-style: italic;
 }
 .about-box {
     max-width: 1200px;
@@ -143,93 +158,64 @@ nav a:hover {
     border: 1px solid rgba(255, 0, 0, 0.2);
     border-radius: 20px;
 }
+.text2 {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    font-size: clamp(16px, 4vw, 20px);
+}
+.cardimg7 {
+    background: url('ofic.png') center/cover no-repeat;
+    margin: 30px auto 0;
+    width: 100%;
+    height: clamp(250px, 50vh, 500px);
+    border-radius: 10px;
+}
+/* ФУТЕР */
 .footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
     padding: 60px 5%;
-    background: rgba(20, 20, 20, 1);
+    background: #0f0f0f;
+    border-top: 1px solid #222;
 }
-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+.footer h3 {
+    margin-bottom: 20px;
+    color: red;
 }
-input {
-    flex: 1;
-    min-width: 200px;
-    padding: 12px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-}
-button {
-    background: red;
-    border: none;
-    color: white;
-    padding: 10px 16px;
-    cursor: pointer;
-}
+/* МОДАЛЬНОЕ ОКНО */
 .modal {
     display: none; 
     position: fixed;
     z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.8);
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.9);
 }
 .modal-content {
     background-color: #1a1a1a;
     margin: 5% auto;
-    padding: 30px;
+    padding: 40px;
     border: 1px solid red;
     border-radius: 15px;
-    width: 95%;
+    width: 90%;
     max-width: 500px;
+    position: relative;
 }
-.modal-content h2 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
-}
-
-.modal-content input {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 12px;
-    border-radius: 5px;
-}
-
 .close {
+    position: absolute;
+    top: 15px; right: 20px;
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
 }
-
-.close:hover {
-    color: red;
-}
+.close:hover { color: red; }
+/* АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ */
 @media (max-width: 800px) {
     .top {
         flex-direction: column;
         gap: 20px;
     }
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-    nav a {
-        margin: 5px;
-    }
+    nav a { margin: 5px 10px; }
 }
-
-
-
-
-
