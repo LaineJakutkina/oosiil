@@ -3,188 +3,168 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: 'Inter', sans-serif;
     background: black;
     color: white;
     line-height: 1.6;
+    overflow-x: hidden; /* Запрещаем боковую прокрутку */
 }
+
 a {
     color: white;
     text-decoration: none;
 }
+
+/* ШАПКА */
 .top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 60px;
+    padding: 20px 5%; /* Используем % вместо px */
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(27, 11, 43, 0.9);
+    background: rgba(27, 11, 43, 0.95);
 }
+
 .logotip {
     font-family: 'Playfair Display', serif;
-    color: white;
     font-size: 25px;
     font-weight: 900;
-    letter-spacing: 1px;
 }
+
 nav a {
-    margin: 0 25px;
-    font-size: 18px;
+    margin: 0 15px;
+    font-size: 16px;
     opacity: 0.85;
 }
-nav a:hover {
-    opacity: 1;
-}
-.button {
-    background: red;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 14px;
-    display: inline-block;
-}
-.button.large {
-    padding: 14px 28px;
-    font-size: 16px;
-    font-weight: 900;
-}
+
+/* ГЛАВНЫЙ ЭКРАН */
 .glavnoe {
-    background: url('cafe.png') center/cover no-repeat;
-    min-height: 900px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('cafe.png') center/cover no-repeat;
+    min-height: 100vh; /* Занимает всю высоту экрана */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0 20px;
+    padding: 20px;
 }
+
 .glavnoe-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: 52px;
-    margin-bottom: 6px;
+    font-size: clamp(32px, 8vw, 52px); /* Адаптивный размер шрифта */
 }
-.glavnoe-content p {
-    max-width: 500px;
-    margin: 0 auto 35px;
-    opacity: 0.9;
-}
+
+/* ЗАГОЛОВКИ И ТЕКСТ */
 .text, .text3 {
-    margin-top: 30px;
+    margin-top: 50px;
     text-align: center;
 }
+
 .text2 {
-    margin: 0 200px 30px;
-    font-size: 24px;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+    font-size: clamp(16px, 4vw, 24px);
     text-align: center;
 }
+
+/* СЕТКА МЕНЮ */
 .sections {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 32px;
-    padding: 30px 50px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Умная сетка */
+    gap: 30px;
+    padding: 40px 5%;
 }
-/* КАРТИНКИ КАРТОЧЕК */
+
+.card {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* КАРТИНКИ (ГЛАВНОЕ ИСПРАВЛЕНИЕ) */
 [class^="cardimg"] {
-    width: 100%; /* Делаем ширину гибкой вместо фиксированных 500px */
-    height: 400px;
+    width: 100% !important; /* Всегда на всю ширину контейнера */
+    height: 300px;
     background-size: cover;
     background-position: center;
     margin-top: 20px;
+    border-radius: 4px;
 }
+
 .cardimg1 { background-image: url('1.png'); }
 .cardimg2 { background-image: url('2.png'); }
 .cardimg3 { background-image: url('3.png'); }
 .cardimg4 { background-image: url('4.png'); }
 .cardimg5 { background-image: url('5.png'); }
 .cardimg6 { background-image: url('6.png'); }
+
 .cardimg7 { 
     background-image: url('ofic.png'); 
-    width: 100%; 
-    max-width: 1350px; 
-    margin: 30px auto 0;
+    height: 400px;
+    max-width: 100%; /* Больше не вылазит за экран */
 }
-.card {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 40px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-}
-.card h2 {
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 12px;
-}
-.card p {
-    margin-bottom: 20px;
-    flex-grow: 1;
-}
-.quote {
-    text-align: center;
-    padding: 20px;
-    font-family: 'Playfair Display', serif;
-}
-.quote blockquote {
-    font-size: 28px;
-    margin-bottom: 12px;
-}
+
+/* СЕКЦИЯ MEIST */
 .about-box {
-    max-width: 1200px; 
+    max-width: 1100px;
     margin: 0 auto 60px;
     padding: 30px;
     background: rgba(139, 0, 0, 0.15);
     border: 1px solid rgba(255, 0, 0, 0.4);
     border-radius: 20px;
 }
+
+/* ФУТЕР */
 .footer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 40px;
-    padding: 60px;
+    padding: 60px 5%;
     background: rgba(0, 0, 0, 0.5);
+    text-align: left;
 }
+
+/* МОДАЛКА */
 .modal-content {
     background-color: #1a1a1a;
-    margin: 10% auto;
-    padding: 30px;
+    margin: 15% auto;
+    padding: 25px;
     border: 1px solid red;
-    border-radius: 15px;
     width: 90%;
-    max-width: 500px; 
+    max-width: 450px;
 }
-/* --- БЛОК АДАПТИВНОСТИ (Media Queries) --- */
-@media (max-width: 1024px) {
-    .text2 { margin: 0 50px 30px; }
-    .top { padding: 20px 30px; }
-}
+
+/* --- АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ --- */
 @media (max-width: 768px) {
     .top {
         flex-direction: column;
-        gap: 20px;
-        padding: 20px;
-    }
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        padding: 15px;
         gap: 10px;
     }
-    nav a { margin: 0 10px; font-size: 16px; }
-    .glavnoe-content h1 { font-size: 36px; }
-    .text2 { 
-        margin: 0 20px 30px; 
-        font-size: 18px; 
+
+    nav a {
+        margin: 0 8px;
+        font-size: 14px;
     }
+
     .sections {
-        padding: 20px;
-        grid-template-columns: 1fr; /* Одна колонка на мобилках */
+        padding: 20px 5%;
     }
-    .card { padding: 20px; }
-    [class^="cardimg"] { height: 250px; } /* Уменьшаем высоту картинок на мобилках */  
+
+    .cardimg7 {
+        height: 250px;
+    }
+
     .footer {
-        padding: 40px 20px;
         text-align: center;
     }
+
     form {
         flex-direction: column;
     }
