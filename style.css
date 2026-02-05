@@ -1,3 +1,4 @@
+/* БАЗОВЫЕ СТИЛИ */
 * {
     margin: 0;
     padding: 0;
@@ -9,12 +10,7 @@ body {
     background: black;
     color: white;
     line-height: 1.6;
-    overflow-x: hidden; /* Запрещаем боковую прокрутку */
-}
-
-a {
-    color: white;
-    text-decoration: none;
+    overflow-x: hidden;
 }
 
 /* ШАПКА */
@@ -22,92 +18,81 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%; /* Используем % вместо px */
+    padding: 20px 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(27, 11, 43, 0.95);
+    background: rgba(15, 15, 15, 0.95);
+    border-bottom: 1px solid rgba(255, 0, 0, 0.3);
 }
 
 .logotip {
     font-family: 'Playfair Display', serif;
-    font-size: 25px;
+    font-size: clamp(18px, 4vw, 25px);
     font-weight: 900;
 }
 
 nav a {
     margin: 0 15px;
     font-size: 16px;
-    opacity: 0.85;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover { color: red; }
+
+.button {
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
 }
 
 /* ГЛАВНЫЙ ЭКРАН */
 .glavnoe {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('cafe.png') center/cover no-repeat;
-    min-height: 100vh; /* Занимает всю высоту экрана */
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
 }
 
 .glavnoe-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 8vw, 52px); /* Адаптивный размер шрифта */
+    font-size: clamp(30px, 8vw, 60px);
 }
 
-/* ЗАГОЛОВКИ И ТЕКСТ */
-.text, .text3 {
-    margin-top: 50px;
-    text-align: center;
-}
+/* МЕНЮ */
+.text, .text3 { text-align: center; margin: 60px 0 30px; }
 
-.text2 {
-    max-width: 800px;
-    margin: 0 auto 30px;
-    padding: 0 20px;
-    font-size: clamp(16px, 4vw, 24px);
-    text-align: center;
-}
-
-/* СЕТКА МЕНЮ */
 .sections {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Умная сетка */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    padding: 40px 5%;
+    padding: 0 5% 100px;
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.05);
     padding: 30px;
-    border-radius: 8px;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;
 }
 
-/* КАРТИНКИ (ГЛАВНОЕ ИСПРАВЛЕНИЕ) */
 [class^="cardimg"] {
-    width: 100% !important; /* Всегда на всю ширину контейнера */
+    width: 100%;
     height: 300px;
     background-size: cover;
     background-position: center;
-    margin-top: 20px;
-    border-radius: 4px;
-}
-
-.cardimg1 { background-image: url('1.png'); }
-.cardimg2 { background-image: url('2.png'); }
-.cardimg3 { background-image: url('3.png'); }
-.cardimg4 { background-image: url('4.png'); }
-.cardimg5 { background-image: url('5.png'); }
-.cardimg6 { background-image: url('6.png'); }
-
-.cardimg7 { 
-    background-image: url('ofic.png'); 
-    height: 400px;
-    max-width: 100%; /* Больше не вылазит за экран */
+    margin-top: auto;
+    border-radius: 5px;
 }
 
 /* СЕКЦИЯ MEIST */
@@ -115,64 +100,43 @@ nav a {
     max-width: 1100px;
     margin: 0 auto 60px;
     padding: 30px;
-    background: rgba(139, 0, 0, 0.15);
-    border: 1px solid rgba(255, 0, 0, 0.4);
-    border-radius: 20px;
+    background: rgba(139, 0, 0, 0.1);
+    border: 1px solid red;
+    border-radius: 15px;
 }
+
+.cardimg7 {
+    background: url('ofic.png') center/cover no-repeat;
+    width: 100%;
+    height: clamp(250px, 50vh, 450px);
+    margin-top: 30px;
+}
+
+.text2 { padding: 0 5%; font-size: clamp(16px, 3vw, 20px); }
 
 /* ФУТЕР */
 .footer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 40px;
-    padding: 60px 5%;
-    background: rgba(0, 0, 0, 0.5);
-    text-align: left;
+    padding: 60px 10%;
+    background: #0a0a0a;
+    border-top: 1px solid red;
 }
+
+.footer-right form { display: flex; gap: 5px; margin-top: 15px; }
+.footer-right input { flex: 1; padding: 10px; background: #111; border: 1px solid #333; color: white; }
 
 /* МОДАЛКА */
-.modal-content {
-    background-color: #1a1a1a;
-    margin: 15% auto;
-    padding: 25px;
-    border: 1px solid red;
-    width: 90%;
-    max-width: 450px;
-}
-#status-text {
-    font-size: 14px;      /* Делаем статус чуть меньше основного логотипа */
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-left: 10px;    /* Отступ от названия */
-    vertical-align: middle;
-}
-/* --- АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ --- */
+.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
+.modal-content { background: #1a1a1a; margin: 10% auto; padding: 30px; width: 90%; max-width: 400px; border: 1px solid red; }
+#bookingForm input { width: 100%; margin-bottom: 10px; padding: 10px; background: #000; border: 1px solid #333; color: white; }
+
+/* АДАПТИВНОСТЬ */
 @media (max-width: 768px) {
-    .top {
-        flex-direction: column;
-        padding: 15px;
-        gap: 10px;
-    }
-
-    nav a {
-        margin: 0 8px;
-        font-size: 14px;
-    }
-
-    .sections {
-        padding: 20px 5%;
-    }
-
-    .cardimg7 {
-        height: 250px;
-    }
-
-    .footer {
-        text-align: center;
-    }
-
-    form {
-        flex-direction: column;
-    }
+    .top { flex-direction: column; gap: 15px; }
+    nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+    nav a { margin: 0 5px; font-size: 14px; }
+    .footer { text-align: center; justify-content: center; }
 }
-
