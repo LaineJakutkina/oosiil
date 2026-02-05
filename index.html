@@ -114,6 +114,29 @@ Me usume, et kõige siiramad vestlused peetakse küünlavalgel ja kõige julgema
     </div>
 </div>
 <script>
+	function updateStatus() {
+    const statusElement = document.getElementById("status-text");
+    const now = new Date();
+    const hour = now.getHours();
+    
+    // Твое заведение работает с 18:00 до 06:00
+    // Если сейчас час >= 18 ИЛИ час < 6 — значит открыто
+    const isOpen = (hour >= 18 || hour < 6);
+
+    if (isOpen) {
+        statusElement.innerHTML = " • AVATUD";
+        statusElement.style.color = "#00ff00"; // Зеленый, когда открыто
+    } else {
+        statusElement.innerHTML = " • SULETUD";
+        statusElement.style.color = "red";     // Красный, когда закрыто
+    }
+}
+
+// Запускаем проверку сразу при загрузке
+updateStatus();
+// И обновляем каждую минуту, чтобы статус менялся сам
+setInterval(updateStatus, 60000);
+	
     const modal = document.getElementById("bookingModal");
     const btns = document.querySelectorAll(".button"); // Находит все кнопки с классом button
     const span = document.getElementsByClassName("close")[0];
@@ -151,5 +174,6 @@ Me usume, et kõige siiramad vestlused peetakse küünlavalgel ja kõige julgema
 </script>
 </body>
 </html>
+
 
 
