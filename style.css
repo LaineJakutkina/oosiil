@@ -1,10 +1,9 @@
-/* 1. ОБЩИЕ НАСТРОЙКИ */
+/* nAsTrOjKi */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Inter', sans-serif;
     background: black;
@@ -12,14 +11,12 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
 }
-
 a {
     color: white;
     text-decoration: none;
     transition: 0.3s;
 }
-
-/* 2. ШАПКА САЙТА (HEADER) */
+/* HeAdEr */
 .top {
     display: flex;
     justify-content: space-between;
@@ -30,7 +27,6 @@ a {
     z-index: 1000;
     background: rgba(27, 11, 43, 0.95);
 }
-
 .logotip {
     font-family: 'Playfair Display', serif;
     color: white;
@@ -38,19 +34,16 @@ a {
     font-weight: 900;
     letter-spacing: 1px;
 }
-
 nav a {
     margin: 0 15px;
     font-size: 16px;
     opacity: 0.85;
 }
-
 nav a:hover {
     opacity: 1;
     color: red;
 }
-
-/* 3. КНОПКИ */
+/* Bowe da hrani eti knopo4ki */
 .button {
     background: red;
     padding: 10px 20px;
@@ -63,20 +56,17 @@ nav a:hover {
     color: white;
     transition: 0.3s;
 }
-
 .button:hover {
     background: darkred;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
 }
-
 .button.large {
     padding: 14px 28px;
     font-size: 16px;
     font-weight: 900;
 }
-
-/* 4. ГЛАВНЫЙ ЭКРАН (HERO) */
+/* GlavnoeHero */
 .glavnoe {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('cafe.png') center/cover no-repeat;
     min-height: 100vh;
@@ -86,36 +76,30 @@ nav a:hover {
     text-align: center;
     padding: 20px;
 }
-
 .glavnoe-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(32px, 8vw, 64px);
     margin-bottom: 15px;
 }
-
 .glavnoe-content p {
     max-width: 600px;
     margin: 0 auto 35px;
     opacity: 0.9;
     font-size: 1.1rem;
 }
-
-/* 5. СЕТКА МЕНЮ (Grid на 3 колонки) */
+/* A vot eto menuwe4ka 3GRID */
 .text {
     margin-top: 50px;
     text-align: center;
 }
-
 .sections {
     display: grid;
-    /* Устанавливаем ровно 3 колонки для больших экранов */
     grid-template-columns: repeat(3, 1fr); 
     gap: 32px;
     padding: 50px 5%;
     align-items: stretch;
 }
-
-/* 6. КАРТОЧКИ БЛЮД */
+/* nJam Eto karto4ki bljud */
 .card {
     background: rgba(255, 255, 255, 0.03);
     padding: clamp(20px, 5vw, 40px);
@@ -123,56 +107,47 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     height: 100%;
-    
-    /* Начальное состояние для анимации появления */
     opacity: 0;
     transform: translateY(40px);
     transition: all 0.8s ease-out;
 }
-
-/* Класс, который добавляет JavaScript при скролле */
+/* JavaScript class dlja skrollA */
 .card.show {
     opacity: 1;
     transform: translateY(0);
 }
-
 .card h2 {
     margin-bottom: 15px;
     font-family: 'Playfair Display', serif;
 }
-
 .card p {
     margin-bottom: 25px;
-    flex-grow: 1; /* Растягивает текст, толкая картинку вниз */
+    flex-grow: 1; 
     font-size: 0.95rem;
     opacity: 0.8;
 }
-
-/* КАРТИНКИ В КАРТОЧКАХ */
+/* Kartino4ki bljud s selektorom atribjutov */
 [class^="cardimg"] {
     width: 100%;
     height: 300px;
-    margin-top: auto; /* Прижимает картинку к самому низу */
+    margin-top: auto; 
     border-radius: 8px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
 .cardimg1 { background-image: url('1.png'); }
 .cardimg2 { background-image: url('2.png'); }
 .cardimg3 { background-image: url('3.png'); }
 .cardimg4 { background-image: url('4.png'); }
 .cardimg5 { background-image: url('5.png'); }
 .cardimg6 { background-image: url('6.png'); }
-
-/* 7. СЕКЦИЯ "MEIST" (О НАС) */
+/* sektsija "MEIST" */
 .quote {
     text-align: center;
     padding: 60px 20px;
     font-family: 'Playfair Display', serif;
 }
-
 .about-box {
     max-width: 1200px;
     margin: 0 auto 60px;
@@ -181,13 +156,11 @@ nav a:hover {
     border: 1px solid rgba(255, 0, 0, 0.2);
     border-radius: 20px;
 }
-
 .text2 {
     max-width: 900px;
     margin: 0 auto 30px;
     font-size: clamp(16px, 4vw, 20px);
 }
-
 .cardimg7 {
     background: url('ofic.png') center/cover no-repeat;
     margin: 30px auto 0;
@@ -195,53 +168,47 @@ nav a:hover {
     height: clamp(250px, 50vh, 500px);
     border-radius: 10px;
 }
-
-/* 8. ФУТЕР (ДОБАВЛЯЕМ РАССТОЯНИЕ И АККУРАТНОСТЬ) */
+/* Moj po4ti krutoj footer JA STRADALA */
 .footer {
     display: flex;
-    justify-content: space-around; /* Расталкивает блоки "Контакты" и "Подписка" */
+    justify-content: space-around; 
     align-items: flex-start;
     flex-wrap: wrap; 
-    gap: 80px; /* Увеличил отступ между колонками, чтобы они не липли */
-    padding: 100px 10%; /* Больше пространства сверху и снизу */
+    gap: 80px; 
+    padding: 100px 10%; 
     background: #000;
     border-top: 1px solid rgba(255, 0, 0, 0.2);
 }
-
 .footer-left, .footer-right {
-    flex: 1; /* Позволяет блокам занимать равное пространство */
-    min-width: 280px; /* Чтобы на мобилках они красиво переносились */
+    flex: 1; 
+    min-width: 280px; 
 }
-
 .footer h3 {
     font-family: 'Playfair Display', serif;
     color: red;
-    margin-bottom: 30px; /* Увеличил отступ под заголовком */
+    margin-bottom: 30px;
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-
 .footer p {
     font-size: 15px;
     color: white;
     opacity: 0.8;
-    margin-bottom: 12px; /* Увеличил расстояние между строчками адреса и телефона */
+    margin-bottom: 12px;
     line-height: 1.6;
 }
-
-/* ФОРМА ПОДПИСКИ */
+/* Dlja podpiso4ki na restoran4ik */
 .footer-right form {
     display: flex;
     align-items: center;
     margin-top: 50px;
 }
-
 .footer-right input {
     background: transparent;
     border: 1px solid #333;
     border-right: none;
-    padding: 14px 18px; /* Сделал инпут чуть выше и просторнее */
+    padding: 14px 18px; 
     color: white;
     font-size: 14px;
     width: 100%;
@@ -249,12 +216,11 @@ nav a:hover {
     outline: none;
     transition: 0.3s;
 }
-
 .footer-right button {
     background: red;
     color: white;
     border: 1px solid red;
-    padding: 14px 25px; /* Кнопка вровень с инпутом */
+    padding: 14px 25px; 
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
@@ -262,12 +228,10 @@ nav a:hover {
     letter-spacing: 1px;
     transition: 0.3s;
 }
-
 .footer-right button:hover {
     background: darkred;
 }
-
-/* 9. МОДАЛЬНОЕ ОКНО (АККУРАТНАЯ И ЧИСТАЯ ФОРМА) */
+/* MODALJNOE OKNO BRONIROVANIJA JA UMERLA */
 .modal {
     display: none; 
     position: fixed;
@@ -277,11 +241,10 @@ nav a:hover {
     background-color: rgba(0, 0, 0, 0.9);
     backdrop-filter: blur(8px);
 }
-
 .modal-content {
     background-color: #1a1a1a;
     margin: 8% auto;
-    padding: 40px; /* Большой внутренний отступ, чтобы форме не было "тесно" */
+    padding: 40px;
     border: 1px solid rgba(255, 0, 0, 0.5);
     border-radius: 20px;
     width: 90%;
@@ -290,25 +253,21 @@ nav a:hover {
     text-align: center;
     box-shadow: 0 0 30px rgba(255, 0, 0, 0.1);
 }
-
 .modal-content h2 {
     font-family: 'Playfair Display', serif;
     font-size: 26px;
-    margin-bottom: 30px; /* Отступ под заголовком */
+    margin-bottom: 30px;
     letter-spacing: 1px;
     color: white;
 }
-
-/* Стили формы и полей ввода */
 #bookingForm {
     display: flex;
-    flex-direction: column; /* Выстраиваем элементы в столбик */
-    gap: 15px; /* Автоматический отступ МЕЖДУ всеми элементами формы */
+    flex-direction: column;
+    gap: 15px;
 }
-
 #bookingForm input {
     width: 100%;
-    padding: 14px 16px; /* Внутренний отступ текста в поле */
+    padding: 14px 16px; 
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -317,22 +276,17 @@ nav a:hover {
     outline: none;
     transition: 0.3s ease;
 }
-
 #bookingForm input:focus {
     border-color: red;
     background: rgba(255, 255, 255, 0.1);
 }
-
-/* Кнопка в форме */
 #bookingForm .button {
-    margin-top: 10px; /* Отступ сверху от последнего поля */
+    margin-top: 10px; 
     padding: 16px;
     width: 100%;
     font-size: 15px;
     letter-spacing: 1px;
 }
-
-/* Крестик закрытия */
 .close {
     position: absolute;
     top: 15px; 
@@ -342,64 +296,47 @@ nav a:hover {
     cursor: pointer;
     transition: 0.3s;
 }
-
 .close:hover {
     color: red;
 }
-
-/* 10. АДАПТИВНОСТЬ ДЛЯ РАЗНЫХ ЭКРАНОВ */
-
+/*adaptacija pod raznqe ustrojstva......*/
 /* Планшеты (меньше 1100px) — 2 колонки */
 @media (max-width: 1100px) {
     .sections {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 /* Телефоны (меньше 800px) — 1 колонка и меню в столбик */
 @media (max-width: 800px) {
     .sections {
         grid-template-columns: 1fr;
-    }
-    
+    }   
     .top {
         flex-direction: column;
         gap: 20px;
         padding: 20px 5%;
-    }
-    
+    } 
     nav {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-    }
-    
+    } 
     nav a {
         margin: 5px 10px;
         font-size: 14px;
     }
 }
-
 /* Совсем узкие экраны (меньше 480px) — правки для формы */
 @media (max-width: 480px) {
     .modal-content {
         padding: 30px 20px; 
         margin: 15% auto;   
-    }
-    
+    }  
     #bookingForm input {
         font-size: 14px;    
     }
-
     .logotip {
-        font-size: 20px; /* Уменьшаем лого, чтобы влезало на маленькие экраны */
+        font-size: 20px;
     }
 }
-
-
-
-
-
-
-
