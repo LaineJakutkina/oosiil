@@ -309,6 +309,7 @@ nav a:hover {
     .top {
         flex-direction: column;
         gap: 20px;
+        padding: 20px 5%;
     }
     
     nav {
@@ -320,6 +321,23 @@ nav a:hover {
     
     nav a {
         margin: 5px 10px;
+        font-size: 14px;
+    }
+}
+
+/* Совсем узкие экраны (меньше 480px) — правки для формы */
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 30px 20px; 
+        margin: 15% auto;   
+    }
+    
+    #bookingForm input {
+        font-size: 14px;    
+    }
+
+    .logotip {
+        font-size: 20px; /* Уменьшаем лого, чтобы влезало на маленькие экраны */
     }
 }
 
