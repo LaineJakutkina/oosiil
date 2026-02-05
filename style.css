@@ -139,7 +139,13 @@ nav a {
     width: 90%;
     max-width: 450px;
 }
-
+#status-text {
+    font-size: 14px;      /* Делаем статус чуть меньше основного логотипа */
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 10px;    /* Отступ от названия */
+    vertical-align: middle;
+}
 /* --- АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ --- */
 @media (max-width: 768px) {
     .top {
@@ -169,3 +175,4 @@ nav a {
         flex-direction: column;
     }
 }
+
