@@ -1,60 +1,80 @@
-/* 1. БАЗОВЫЙ СБРОС И ШРИФТЫ */
+/* 1. БАЗОВЫЕ НАСТРОЙКИ */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    background-color: #050505;
-    color: #ffffff;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
-
 html {
     scroll-behavior: smooth;
 }
 
-/* 2. ШАПКА (HEADER) - фиксированная и стильная */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #050505;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* 2. ШАПКА (HEADER) */
 header.top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
-    background: rgba(10, 10, 10, 0.9);
+    padding: 15px 5%;
+    background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 0, 0, 0.3);
 }
 
 .logotip {
     font-family: 'Playfair Display', serif;
     font-size: 24px;
     font-weight: 900;
-    color: white;
     letter-spacing: 2px;
+    color: white;
 }
 
 nav a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+    opacity: 0.8;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: red;
+}
+
+/* 3. КНОПКИ */
+.button {
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
+    cursor: pointer;
     text-transform: uppercase;
     transition: 0.3s;
 }
 
-nav a:hover {
-    color: red;
+.button:hover {
+    background: darkred;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
 }
 
-/* 3. ГЛАВНЫЙ ЭКРАН (HERO) */
+/* 4. ГЛАВНЫЙ ЭКРАН (HERO) */
 .glavnoe {
-    height: 90vh;
+    height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('cafe.png') center/cover no-repeat;
     display: flex;
     align-items: center;
@@ -64,87 +84,144 @@ nav a:hover {
 
 .glavnoe-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 8vw, 60px);
+    font-size: clamp(32px, 8vw, 64px);
     margin-bottom: 20px;
 }
 
-/* 4. МЕНЮ (ГРИД) */
-.text h1 {
-    text-align: center;
-    padding: 60px 0 20px;
-    font-family: 'Playfair Display', serif;
+/* 5. ЗАГОЛОВКИ РАЗДЕЛОВ (ЦЕНТРИРОВАНИЕ) */
+.text, .text3 {
+    width: 100%;
+    text-align: center; /* Центрирует заголовок Menüü и Meist */
+    margin-top: 60px;
 }
 
+.text h1, .text3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* 6. СЕТКА МЕНЮ */
 .sections {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    padding: 20px 5% 80px;
+    padding: 40px 5% 80px;
 }
 
 .card {
     background: #111;
-    padding: 25px;
+    padding: 30px;
     border: 1px solid #222;
     display: flex;
     flex-direction: column;
-    transition: 0.3s;
+    transition: 0.4s;
+    opacity: 0; /* Для анимации появления из JS */
+    transform: translateY(20px);
+}
+
+.card.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .card:hover {
     border-color: red;
-    transform: translateY(-5px);
 }
 
-/* Картинки в меню */
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    color: red;
+}
+
 [class^="cardimg"] {
     width: 100%;
     height: 250px;
+    margin-top: auto;
     background-size: cover;
     background-position: center;
-    margin-top: auto;
     border: 1px solid #222;
 }
 
-/* 5. ФУТЕР - ИСПРАВЛЕННЫЙ */
+/* 7. СЕКЦИЯ MEIST (О НАС) */
+.about-box {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирует контент */
+    text-align: center;  /* Центрирует текст */
+}
+
+.text2 p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.cardimg7 {
+    width: 100%;
+    height: 450px;
+    background: url('ofic.png') center/cover no-repeat;
+    border: 1px solid rgba(255, 0, 0, 0.2);
+}
+
+blockquote {
+    text-align: center;
+    font-style: italic;
+    color: red;
+    font-size: 1.4rem;
+    margin: 40px 0;
+}
+
+/* 8. ФУТЕР (ИСПРАВЛЕННЫЙ) */
 .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
     padding: 80px 10%;
     background: #000;
     border-top: 2px solid #8b0000;
-    display: flex;
-    justify-content: space-between;
     gap: 40px;
 }
 
 .footer-left {
     flex: 1;
+    min-width: 250px;
 }
 
 .footer-right {
     flex: 1;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Все вправо */
+    align-items: flex-end; /* Выравнивание формы вправо */
 }
 
 .footer h3 {
     color: red;
-    margin-bottom: 20px;
-    font-family: 'Playfair Display', serif;
     text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 
 .footer-right form {
     display: flex;
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
 }
 
 .footer-right input {
     flex: 1;
     padding: 12px;
-    background: #1a1a1a;
+    background: #111;
     border: 1px solid #333;
+    border-right: none;
     color: white;
     outline: none;
 }
@@ -156,36 +233,46 @@ nav a:hover {
     padding: 0 20px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-.footer-right button:hover {
-    background: darkred;
-}
-
-/* 6. МОДАЛЬНОЕ ОКНО */
+/* 9. МОДАЛЬНОЕ ОКНО */
 .modal-content {
     background: #111;
     border: 1px solid red;
     padding: 40px;
-    max-width: 400px;
+    max-width: 450px;
     margin: 10% auto;
+    position: relative;
 }
 
 #bookingForm {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    margin-top: 20px;
 }
 
 #bookingForm input {
-    padding: 10px;
+    padding: 12px;
     background: #000;
     border: 1px solid #333;
     color: white;
+    outline: none;
 }
 
-/* 7. МОБИЛКА */
+#bookingForm input:focus {
+    border-color: red;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* 10. АДАПТИВНОСТЬ */
 @media (max-width: 768px) {
     .footer {
         flex-direction: column;
@@ -193,5 +280,9 @@ nav a:hover {
     }
     .footer-right {
         align-items: center;
+    }
+    header.top {
+        flex-direction: column;
+        gap: 15px;
     }
 }
