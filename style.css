@@ -196,75 +196,44 @@ nav a:hover {
     border-radius: 10px;
 }
 
-/* 8. ФУТЕР (ДОБАВЛЯЕМ РАССТОЯНИЕ И АККУРАТНОСТЬ) */
+/* 8. ФУТЕР (ПРАВКА: ДВИГАЕМ ФОРМУ ВПРАВО) */
 .footer {
     display: flex;
-    justify-content: space-around; /* Расталкивает блоки "Контакты" и "Подписка" */
+    justify-content: space-between; /* Расталкивает блоки по краям */
     align-items: flex-start;
     flex-wrap: wrap; 
-    gap: 80px; /* Увеличил отступ между колонками, чтобы они не липли */
-    padding: 100px 10%; /* Больше пространства сверху и снизу */
+    gap: 40px;
+    padding: 100px 10%; /* 10% отступы по бокам создают "коридор" для контента */
     background: #000;
     border-top: 1px solid rgba(255, 0, 0, 0.2);
 }
 
-.footer-left, .footer-right {
-    flex: 1; /* Позволяет блокам занимать равное пространство */
-    min-width: 280px; /* Чтобы на мобилках они красиво переносились */
+.footer-left {
+    flex: 1;
+    min-width: 280px;
+    /* Можно добавить небольшой margin-left, если хочешь сдвинуть контакты от края */
 }
 
-.footer h3 {
-    font-family: 'Playfair Display', serif;
-    color: red;
-    margin-bottom: 30px; /* Увеличил отступ под заголовком */
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+.footer-right {
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Выравнивает заголовок и форму по ПРАВОМУ краю своего блока */
+    text-align: right;
 }
 
-.footer p {
-    font-size: 15px;
-    color: white;
-    opacity: 0.8;
-    margin-bottom: 12px; /* Увеличил расстояние между строчками адреса и телефона */
-    line-height: 1.6;
+/* Фикс для заголовка в правой части */
+.footer-right h3 {
+    margin-bottom: 25px;
+    width: 100%; /* Чтобы текст слушался text-align: right */
 }
 
-/* ФОРМА ПОДПИСКИ */
+/* Чтобы сама форма (инпут + кнопка) не растягивалась на весь экран и стояла ровно */
 .footer-right form {
     display: flex;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.footer-right input {
-    background: transparent;
-    border: 1px solid #333;
-    border-right: none;
-    padding: 14px 18px; /* Сделал инпут чуть выше и просторнее */
-    color: white;
-    font-size: 14px;
+    justify-content: flex-end; /* Двигает саму форму вправо внутри блока */
     width: 100%;
-    max-width: 300px;
-    outline: none;
-    transition: 0.3s;
-}
-
-.footer-right button {
-    background: red;
-    color: white;
-    border: 1px solid red;
-    padding: 14px 25px; /* Кнопка вровень с инпутом */
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-size: 13px;
-    letter-spacing: 1px;
-    transition: 0.3s;
-}
-
-.footer-right button:hover {
-    background: darkred;
 }
 
 /* 9. МОДАЛЬНОЕ ОКНО (АККУРАТНАЯ И ЧИСТАЯ ФОРМА) */
@@ -396,6 +365,7 @@ nav a:hover {
         font-size: 20px; /* Уменьшаем лого, чтобы влезало на маленькие экраны */
     }
 }
+
 
 
 
