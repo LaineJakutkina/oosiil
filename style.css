@@ -1,22 +1,18 @@
-/* --- ТВОИ ОРИГИНАЛЬНЫЕ СТИЛИ --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Inter', sans-serif;
     background: black;
     color: white;
     line-height: 1.6;
 }
-
 a {
     color: white;
     text-decoration: none;
 }
-
 .top {
     display: flex;
     justify-content: space-between;
@@ -27,7 +23,6 @@ a {
     z-index: 1000;
     background: rgba(27, 11, 43, 0.9);
 }
-
 .logotip {
     font-family: 'Playfair Display', serif;
     color: white;
@@ -35,17 +30,14 @@ a {
     font-weight: 900;
     letter-spacing: 1px;
 }
-
 nav a {
     margin: 0 25px;
     font-size: 18px;
     opacity: 0.85;
 }
-
 nav a:hover {
     opacity: 1;
 }
-
 .button {
     background: red;
     padding: 10px 20px;
@@ -53,13 +45,11 @@ nav a:hover {
     font-size: 14px;
     display: inline-block;
 }
-
 .button.large {
     padding: 14px 28px;
     font-size: 16px;
     font-weight: 900;
 }
-
 .glavnoe {
     background: url('cafe.png') center/cover no-repeat;
     min-height: 900px;
@@ -69,37 +59,31 @@ nav a:hover {
     text-align: center;
     padding: 0 20px;
 }
-
 .glavnoe-content h1 {
     font-family: 'Playfair Display', serif;
     font-size: 52px;
     margin-bottom: 6px;
 }
-
 .glavnoe-content p {
     max-width: 500px;
     margin: 0 auto 35px;
     opacity: 0.9;
 }
-
 .text, .text3 {
     margin-top: 30px;
     text-align: center;
 }
-
 .text2 {
     margin: 0 200px 30px;
     font-size: 24px;
     text-align: center;
 }
-
 .sections {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 32px;
     padding: 30px 50px;
 }
-
 /* КАРТИНКИ КАРТОЧЕК */
 [class^="cardimg"] {
     width: 100%; /* Делаем ширину гибкой вместо фиксированных 500px */
@@ -108,7 +92,6 @@ nav a:hover {
     background-position: center;
     margin-top: 20px;
 }
-
 .cardimg1 { background-image: url('1.png'); }
 .cardimg2 { background-image: url('2.png'); }
 .cardimg3 { background-image: url('3.png'); }
@@ -121,7 +104,6 @@ nav a:hover {
     max-width: 1350px; 
     margin: 30px auto 0;
 }
-
 .card {
     background: rgba(255, 255, 255, 0.03);
     padding: 40px;
@@ -129,37 +111,31 @@ nav a:hover {
     display: flex;
     flex-direction: column;
 }
-
 .card h2 {
     font-family: 'Playfair Display', serif;
     margin-bottom: 12px;
 }
-
 .card p {
     margin-bottom: 20px;
     flex-grow: 1;
 }
-
 .quote {
     text-align: center;
     padding: 20px;
     font-family: 'Playfair Display', serif;
 }
-
 .quote blockquote {
     font-size: 28px;
     margin-bottom: 12px;
 }
-
 .about-box {
-    max-width: 1200px; /* Уменьшил с 1800 для лучшего вида */
+    max-width: 1200px; 
     margin: 0 auto 60px;
     padding: 30px;
     background: rgba(139, 0, 0, 0.15);
     border: 1px solid rgba(255, 0, 0, 0.4);
     border-radius: 20px;
 }
-
 .footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -167,7 +143,6 @@ nav a:hover {
     padding: 60px;
     background: rgba(0, 0, 0, 0.5);
 }
-
 .modal-content {
     background-color: #1a1a1a;
     margin: 10% auto;
@@ -175,53 +150,41 @@ nav a:hover {
     border: 1px solid red;
     border-radius: 15px;
     width: 90%;
-    max-width: 500px; /* Уменьшил ширину модалки для удобства */
+    max-width: 500px; 
 }
-
 /* --- БЛОК АДАПТИВНОСТИ (Media Queries) --- */
-
 @media (max-width: 1024px) {
     .text2 { margin: 0 50px 30px; }
     .top { padding: 20px 30px; }
 }
-
 @media (max-width: 768px) {
     .top {
         flex-direction: column;
         gap: 20px;
         padding: 20px;
     }
-
     nav {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
     }
-
     nav a { margin: 0 10px; font-size: 16px; }
-
     .glavnoe-content h1 { font-size: 36px; }
-
     .text2 { 
         margin: 0 20px 30px; 
         font-size: 18px; 
     }
-
     .sections {
         padding: 20px;
         grid-template-columns: 1fr; /* Одна колонка на мобилках */
     }
-
     .card { padding: 20px; }
-
-    [class^="cardimg"] { height: 250px; } /* Уменьшаем высоту картинок на мобилках */
-    
+    [class^="cardimg"] { height: 250px; } /* Уменьшаем высоту картинок на мобилках */  
     .footer {
         padding: 40px 20px;
         text-align: center;
     }
-
     form {
         flex-direction: column;
     }
