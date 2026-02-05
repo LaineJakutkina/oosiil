@@ -1,274 +1,260 @@
-/* 1. ОБЩИЕ НАСТРОЙКИ */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: black;
-    color: white;
-    line-height: 1.6;
-    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
+    background: black;
+    color: white;
+    line-height: 1.6;
 }
 
 a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
+    color: white;
+    text-decoration: none;
 }
 
-/* 2. ШАПКА САЙТА (HEADER) */
 .top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 5%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(27, 11, 43, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 60px;
+    position: sticky;
+    top: 0;
+    background: rgba(27, 11, 43, 0.9);
 }
 
 .logotip {
-    font-family: 'Playfair Display', serif;
-    color: white;
-    font-size: 25px;
-    font-weight: 900;
-    letter-spacing: 1px;
+    font-family: 'Playfair Display', serif;
+	color: white;
+    font-size: 25px;
+	font-weight: 900;
+    letter-spacing: 1px;
 }
 
 nav a {
-    margin: 0 15px;
-    font-size: 16px;
-    opacity: 0.85;
+    margin: 0 25px;
+    font-size: 18px;
+    opacity: 0.85;
 }
 
 nav a:hover {
-    opacity: 1;
-    color: red;
+    opacity: 1;
 }
 
-/* 3. КНОПКИ */
 .button {
-    background: red;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    display: inline-block;
-    border: none;
-    color: white;
-    transition: 0.3s;
-}
-
-.button:hover {
-    background: darkred;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    background: red;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
 .button.large {
-    padding: 14px 28px;
-    font-size: 16px;
-    font-weight: 900;
+    padding: 14px 28px;
+    font-size: 16px;
+	font-weight: 900;
 }
 
-/* 4. ГЛАВНЫЙ ЭКРАН (HERO) */
 .glavnoe {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('cafe.png') center/cover no-repeat;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
+	background: url('img/cafe.png') center/cover no-repeat;
+    min-height: 900px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
 }
 
 .glavnoe-content h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 8vw, 64px);
-    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    margin-bottom: 6px;
 }
 
 .glavnoe-content p {
-    max-width: 600px;
-    margin: 0 auto 35px;
-    opacity: 0.9;
-    font-size: 1.1rem;
+    max-width: 500px;
+    margin: 0 auto 35px;
+    opacity: 0.9;
 }
-
-/* 5. СЕТКА МЕНЮ (Grid на 3 колонки) */
 .text {
-    margin-top: 50px;
-    text-align: center;
+	margin-top: 30px;
+	text-align: center;
 }
-
+.text2 {
+	margin-left: 200px;
+	margin-right: 200px;
+	margin-bottom: 30px;
+	font-size: 24px;
+	text-align: center;
+}
+.text3 {
+	margin-bottom: 30px;
+	text-align: center;
+}
 .sections {
-    display: grid;
-    /* Устанавливаем ровно 3 колонки для больших экранов */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 32px;
-    padding: 50px 5%;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 32px;
+    padding: 30px 50px;
 }
-
-/* 6. КАРТОЧКИ БЛЮД */
+.cardimg1 {
+	background: url('img/1.png') center/cover no-repeat;
+	width: 500px;
+	height: 400px;
+}
+.cardimg2 {
+	background: url('img/2.png') center/cover no-repeat;
+	width: 500px;
+	height: 400px;
+}
+.cardimg3 {
+	background: url('img/3.png') center/cover no-repeat;
+	width: 500px;
+	height: 400px;
+}
+.cardimg4 {
+	background: url('img/4.png') center/cover no-repeat;
+	width: 500px;
+	height: 400px;
+}
+.cardimg5 {
+	background: url('img/5.png') center/cover no-repeat;
+	width: 500px;
+	height: 400px;
+}
+.cardimg6 {
+	background: url('img/6.png') center/cover no-repeat;
+	width: 500px;
+	height: 400px;
+}
+.cardimg7 {
+	background: url('img/ofic.png') center/cover no-repeat;
+	margin-top: 30px;
+	width: 1350px;
+	height: 400px;
+}
 .card {
-    background: rgba(255, 255, 255, 0.03);
-    padding: clamp(20px, 5vw, 40px);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    
-    /* Начальное состояние для анимации появления */
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease-out;
-}
-
-/* Класс, который добавляет JavaScript при скролле */
-.card.show {
-    opacity: 1;
-    transform: translateY(0);
+    background: rgba(255, 255, 255, 0.03);
+    padding: 40px;
+    border-radius: 8px;
 }
 
 .card h2 {
-    margin-bottom: 15px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 12px;
 }
-
 .card p {
-    margin-bottom: 25px;
-    flex-grow: 1; /* Растягивает текст, толкая картинку вниз */
-    font-size: 0.95rem;
-    opacity: 0.8;
+    margin-bottom: 40px;
 }
 
-/* КАРТИНКИ В КАРТОЧКАХ */
-[class^="cardimg"] {
-    width: 100%;
-    height: 300px;
-    margin-top: auto; /* Прижимает картинку к самому низу */
-    border-radius: 8px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.cardimg1 { background-image: url('1.png'); }
-.cardimg2 { background-image: url('2.png'); }
-.cardimg3 { background-image: url('3.png'); }
-.cardimg4 { background-image: url('4.png'); }
-.cardimg5 { background-image: url('5.png'); }
-.cardimg6 { background-image: url('6.png'); }
-
-/* 7. СЕКЦИЯ "MEIST" (О НАС) */
 .quote {
-    text-align: center;
-    padding: 60px 20px;
-    font-family: 'Playfair Display', serif;
+    text-align: center;
+    padding: 20px 20px;
+    font-family: 'Playfair Display', serif;
 }
 
+.quote blockquote {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.quote span {
+    font-size: 14px;
+    opacity: 0.7;
+}
 .about-box {
-    max-width: 1200px;
-    margin: 0 auto 60px;
-    padding: clamp(20px, 5vw, 50px);
-    background: rgba(139, 0, 0, 0.1);
-    border: 1px solid rgba(255, 0, 0, 0.2);
-    border-radius: 20px;
+    max-width: 1800px;
+    margin: 0 auto 60px;
+    padding: 30px;
+    background: rgba(139, 0, 0, 0.15);
+    border: 1px solid rgba(255, 0, 0, 0.4);
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(255, 0, 0, 0.05);
 }
-
-.text2 {
-    max-width: 900px;
-    margin: 0 auto 30px;
-    font-size: clamp(16px, 4vw, 20px);
-}
-
-.cardimg7 {
-    background: url('ofic.png') center/cover no-repeat;
-    margin: 30px auto 0;
-    width: 100%;
-    height: clamp(250px, 50vh, 500px);
-    border-radius: 10px;
-}
-
-/* 8. ФУТЕР */
 .footer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    padding: 60px 5%;
-    background: #0f0f0f;
-    border-top: 1px solid #222;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 40px;
+    padding: 60px;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .footer h3 {
-    margin-bottom: 20px;
-    color: red;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 12px;
 }
 
-/* 9. МОДАЛЬНОЕ ОКНО */
+.footer p {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+form {
+    display: flex;
+    gap: 8px;
+}
+
+input {
+    flex: 1;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid rgba(245, 233, 220, 0.4);
+    color: white;
+}
+
+button {
+    background: red;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    cursor: pointer;
+}
 .modal {
-    display: none; 
-    position: fixed;
-    z-index: 2000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.9);
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
 }
 
 .modal-content {
-    background-color: #1a1a1a;
-    margin: 5% auto;
-    padding: 40px;
-    border: 1px solid red;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 500px;
-    position: relative;
+    background-color: #1a1a1a;
+    margin: 10% auto;
+    padding: 30px;
+    border: 1px solid red;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+}
+
+.modal-content input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 5px;
 }
 
 .close {
-    position: absolute;
-    top: 15px; right: 20px;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* 10. АДАПТИВНОСТЬ ДЛЯ РАЗНЫХ ЭКРАНОВ */
-
-/* Планшеты (меньше 1100px) — 2 колонки */
-@media (max-width: 1100px) {
-    .sections {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Телефоны (меньше 800px) — 1 колонка и меню в столбик */
-@media (max-width: 800px) {
-    .sections {
-        grid-template-columns: 1fr;
-    }
-    
-    .top {
-        flex-direction: column;
-        gap: 20px;
-    }
-    
-    nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-    
-    nav a {
-        margin: 5px 10px;
-    }
+.close:hover {
+    color: red;
 }
