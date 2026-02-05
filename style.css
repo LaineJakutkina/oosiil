@@ -196,19 +196,72 @@ nav a:hover {
     border-radius: 10px;
 }
 
-/* 8. ФУТЕР */
+/* 8. ФУТЕР (ИСПРАВЛЕННЫЙ И АККУРАТНЫЙ) */
 .footer {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    display: flex;
+    justify-content: space-around; /* Распределяет блоки "Контакты" и "Подписка" по центру */
+    align-items: flex-start;
+    flex-wrap: wrap; 
     gap: 40px;
-    padding: 60px 5%;
-    background: #0f0f0f;
-    border-top: 1px solid #222;
+    padding: 80px 5%;
+    background: #000; /* Глубокий черный цвет */
+    border-top: 1px solid rgba(255, 0, 0, 0.2);
 }
 
 .footer h3 {
-    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
     color: red;
+    margin-bottom: 25px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer p {
+    font-size: 14px;
+    color: white;
+    opacity: 0.8;
+    margin-bottom: 10px;
+}
+
+/* ФОРМА ПОДПИСКИ В ФУТЕРЕ */
+.footer-right form {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.footer-right input {
+    background: transparent;
+    border: 1px solid #333;
+    border-right: none; /* Соединяем поле с кнопкой */
+    padding: 12px 15px;
+    color: white;
+    font-size: 14px;
+    width: clamp(150px, 20vw, 250px); /* Гибкая ширина поля */
+    outline: none;
+    transition: 0.3s;
+}
+
+.footer-right input:focus {
+    border-color: red;
+}
+
+.footer-right button {
+    background: red;
+    color: white;
+    border: 1px solid red;
+    padding: 12px 25px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.footer-right button:hover {
+    background: darkred;
+    border-color: darkred;
 }
 
 /* 9. МОДАЛЬНОЕ ОКНО (АККУРАТНАЯ И ЧИСТАЯ ФОРМА) */
@@ -340,5 +393,6 @@ nav a:hover {
         font-size: 20px; /* Уменьшаем лого, чтобы влезало на маленькие экраны */
     }
 }
+
 
 
