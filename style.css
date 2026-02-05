@@ -234,7 +234,7 @@ nav a:hover {
 .footer-right form {
     display: flex;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 50px;
 }
 
 .footer-right input {
@@ -396,6 +396,7 @@ nav a:hover {
         font-size: 20px; /* Уменьшаем лого, чтобы влезало на маленькие экраны */
     }
 }
+
 
 
 
