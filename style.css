@@ -1,4 +1,3 @@
-/* БАЗОВЫЕ СТИЛИ */
 * {
     margin: 0;
     padding: 0;
@@ -13,12 +12,12 @@ body {
     overflow-x: hidden;
 }
 
-/* ШАПКА */
+/* HEADER */
 .top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 15px 5%;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -28,32 +27,34 @@ body {
 
 .logotip {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(18px, 4vw, 25px);
+    font-size: clamp(18px, 4vw, 24px);
     font-weight: 900;
 }
 
+#status-text { font-size: 0.6em; font-weight: bold; margin-left: 5px; }
+
 nav a {
-    margin: 0 15px;
-    font-size: 16px;
+    margin: 0 10px;
+    font-size: 15px;
     color: white;
     text-decoration: none;
-    transition: 0.3s;
+    opacity: 0.8;
 }
-
-nav a:hover { color: red; }
+nav a:hover { opacity: 1; color: red; }
 
 .button {
     background: red;
     color: white;
     padding: 10px 20px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: bold;
     border: none;
+    border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
-/* ГЛАВНЫЙ ЭКРАН */
+/* HERO SECTION */
 .glavnoe {
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('cafe.png') center/cover no-repeat;
     height: 100vh;
@@ -61,82 +62,82 @@ nav a:hover { color: red; }
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 0 20px;
 }
-
 .glavnoe-content h1 {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(30px, 8vw, 60px);
+    font-size: clamp(32px, 8vw, 60px);
 }
 
-/* МЕНЮ */
+/* MENU SECTION */
 .text, .text3 { text-align: center; margin: 60px 0 30px; }
-
 .sections {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    padding: 0 5% 100px;
+    padding: 0 5% 80px;
 }
-
 .card {
     background: rgba(255, 255, 255, 0.05);
-    padding: 30px;
+    padding: 25px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
 }
-
 [class^="cardimg"] {
     width: 100%;
-    height: 300px;
+    height: 250px;
     background-size: cover;
     background-position: center;
-    margin-top: auto;
+    margin-top: 15px;
     border-radius: 5px;
 }
+.cardimg1 { background-image: url('1.png'); }
+.cardimg2 { background-image: url('2.png'); }
+.cardimg3 { background-image: url('3.png'); }
+.cardimg4 { background-image: url('4.png'); }
+.cardimg5 { background-image: url('5.png'); }
+.cardimg6 { background-image: url('6.png'); }
 
-/* СЕКЦИЯ MEIST */
+/* ABOUT SECTION */
 .about-box {
     max-width: 1100px;
-    margin: 0 auto 60px;
+    margin: 0 auto 40px;
     padding: 30px;
     background: rgba(139, 0, 0, 0.1);
     border: 1px solid red;
     border-radius: 15px;
 }
-
+.text2 { font-size: clamp(16px, 3vw, 20px); text-align: center; }
 .cardimg7 {
     background: url('ofic.png') center/cover no-repeat;
     width: 100%;
-    height: clamp(250px, 50vh, 450px);
-    margin-top: 30px;
+    height: 350px;
+    margin-top: 25px;
 }
+blockquote { font-family: 'Playfair Display', serif; font-size: 24px; color: red; margin-top: 20px; }
 
-.text2 { padding: 0 5%; font-size: clamp(16px, 3vw, 20px); }
-
-/* ФУТЕР */
+/* FOOTER */
 .footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 40px;
-    padding: 60px 10%;
+    gap: 30px;
+    padding: 50px 10%;
     background: #0a0a0a;
-    border-top: 1px solid red;
 }
+.footer-right form { display: flex; margin-top: 15px; }
+.footer-right input { padding: 10px; background: #111; border: 1px solid #333; color: white; flex: 1; }
 
-.footer-right form { display: flex; gap: 5px; margin-top: 15px; }
-.footer-right input { flex: 1; padding: 10px; background: #111; border: 1px solid #333; color: white; }
-
-/* МОДАЛКА */
+/* MODAL */
 .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }
-.modal-content { background: #1a1a1a; margin: 10% auto; padding: 30px; width: 90%; max-width: 400px; border: 1px solid red; }
-#bookingForm input { width: 100%; margin-bottom: 10px; padding: 10px; background: #000; border: 1px solid #333; color: white; }
+.modal-content { background: #1a1a1a; margin: 15% auto; padding: 30px; width: 90%; max-width: 400px; border: 1px solid red; position: relative; }
+#bookingForm input { width: 100%; padding: 10px; margin-bottom: 10px; background: black; border: 1px solid #333; color: white; }
+.close { position: absolute; right: 20px; top: 10px; font-size: 24px; cursor: pointer; }
 
-/* АДАПТИВНОСТЬ */
+/* MOBILE ADJUSTMENTS */
 @media (max-width: 768px) {
     .top { flex-direction: column; gap: 15px; }
     nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
-    nav a { margin: 0 5px; font-size: 14px; }
     .footer { text-align: center; justify-content: center; }
 }
