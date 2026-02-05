@@ -211,79 +211,84 @@ nav a:hover {
     color: red;
 }
 
-/* 9. МОДАЛЬНОЕ ОКНО (СТИЛЬНЫЙ ТЕМНЫЙ ЛЮКС) */
+/* 9. МОДАЛЬНОЕ ОКНО (АККУРАТНАЯ И ЧИСТАЯ ФОРМА) */
 .modal {
     display: none; 
     position: fixed;
     z-index: 2000;
     left: 0; top: 0;
     width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px); /* Размытие заднего фона */
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(8px);
 }
 
 .modal-content {
-    background: rgba(20, 20, 20, 0.98); 
+    background-color: #1a1a1a;
     margin: 8% auto;
-    padding: clamp(30px, 5vw, 50px);
-    border: 1px solid rgba(255, 0, 0, 0.4); /* Тонкая красная грань */
+    padding: 40px; /* Большой внутренний отступ, чтобы форме не было "тесно" */
+    border: 1px solid rgba(255, 0, 0, 0.5);
     border-radius: 20px;
     width: 90%;
     max-width: 450px;
     position: relative;
     text-align: center;
-    box-shadow: 0 0 50px rgba(255, 0, 0, 0.15); /* Мягкое свечение */
+    box-shadow: 0 0 30px rgba(255, 0, 0, 0.1);
 }
 
 .modal-content h2 {
     font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    margin-bottom: 25px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-size: 26px;
+    margin-bottom: 30px; /* Отступ под заголовком */
+    letter-spacing: 1px;
+    color: white;
 }
 
-/* Стили полей ввода */
+/* Стили формы и полей ввода */
+#bookingForm {
+    display: flex;
+    flex-direction: column; /* Выстраиваем элементы в столбик */
+    gap: 15px; /* Автоматический отступ МЕЖДУ всеми элементами формы */
+}
+
 #bookingForm input {
     width: 100%;
-    padding: 14px;
-    margin-bottom: 15px;
-    background: rgba(255, 255, 255, 0.05); /* Полупрозрачный фон */
+    padding: 14px 16px; /* Внутренний отступ текста в поле */
+    background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     color: white;
     font-size: 16px;
     outline: none;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 #bookingForm input:focus {
     border-color: red;
     background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
 }
 
-/* Кнопка внутри формы */
+/* Кнопка в форме */
 #bookingForm .button {
-    width: 100%;
+    margin-top: 10px; /* Отступ сверху от последнего поля */
     padding: 16px;
-    margin-top: 10px;
+    width: 100%;
+    font-size: 15px;
     letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
+/* Крестик закрытия */
 .close {
     position: absolute;
-    top: 20px; right: 25px;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 30px;
+    top: 15px; 
+    right: 20px;
+    color: #666;
+    font-size: 28px;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .close:hover {
     color: red;
-    transform: rotate(90deg);
 }
 
 /* 10. АДАПТИВНОСТЬ ДЛЯ РАЗНЫХ ЭКРАНОВ */
@@ -317,4 +322,5 @@ nav a:hover {
         margin: 5px 10px;
     }
 }
+
 
