@@ -58,7 +58,7 @@ nav a:hover {
 }
 
 .glavnoe {
-	background: url('img/cafe.png') center/cover no-repeat;
+	background: url('cafe.png') center/cover no-repeat;
     min-height: 900px;
     display: flex;
     align-items: center;
@@ -100,37 +100,37 @@ nav a:hover {
     padding: 30px 50px;
 }
 .cardimg1 {
-	background: url('img/1.png') center/cover no-repeat;
+	background: url('1.png') center/cover no-repeat;
 	width: 500px;
 	height: 400px;
 }
 .cardimg2 {
-	background: url('img/2.png') center/cover no-repeat;
+	background: url('2.png') center/cover no-repeat;
 	width: 500px;
 	height: 400px;
 }
 .cardimg3 {
-	background: url('img/3.png') center/cover no-repeat;
+	background: url('3.png') center/cover no-repeat;
 	width: 500px;
 	height: 400px;
 }
 .cardimg4 {
-	background: url('img/4.png') center/cover no-repeat;
+	background: url('4.png') center/cover no-repeat;
 	width: 500px;
 	height: 400px;
 }
 .cardimg5 {
-	background: url('img/5.png') center/cover no-repeat;
+	background: url('5.png') center/cover no-repeat;
 	width: 500px;
 	height: 400px;
 }
 .cardimg6 {
-	background: url('img/6.png') center/cover no-repeat;
+	background: url('6.png') center/cover no-repeat;
 	width: 500px;
 	height: 400px;
 }
 .cardimg7 {
-	background: url('img/ofic.png') center/cover no-repeat;
+	background: url('ofic.png') center/cover no-repeat;
 	margin-top: 30px;
 	width: 1350px;
 	height: 400px;
@@ -258,3 +258,4 @@ button {
 .close:hover {
     color: red;
 }
+
