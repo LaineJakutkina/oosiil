@@ -24,7 +24,9 @@
         <a class="button large js-open-modal" href="#">AVASTA ÖÖ</a>
     </div>
 </section>
-<div class="text"><h1>Menüü</h1></div>
+
+<div class="text"><h2>Menüü</h2></div>
+
 <section id="Menüü" class="sections">
     <div class="card">
         <h2>Kuradilõksu must pasta</h2>
@@ -81,35 +83,38 @@
         <div class="cardimg6"></div>
     </div>
 </section>
+
 <section id="Meist" class="quote">
     <div class="about-box">
-        <h1 class="text3">Meist</h1>
+        <h2 class="text3">Meist</h2>
         <div class="text2">
             <p>ÖÖSIIL ei ole lihtsalt kohvik. See on koht, kus piir reaalsuse ja muinasjutu vahel hajub koos viimase päikesekiirega. Me avame oma uksed siis, kui maailm jääb magama, et pakkuda peavarju neile, kes otsivad midagi enamat kui lihtsalt toitu.<br>
             Meie köök on inspireeritud öö sügavustest: mustad nagu süsi pastad, veripunased kastmed ja magustoidud, mis näevad välja nagu nõiutud rüütlite kingitused. Iga roog on rituaal, iga maitse on loits.<br>
-            Me usume, et kõige siiramad vestlused peetakse küünlavalgel и kõige julgemad mõtted sünnivad siis, kui tähistaevas on ainus tunnistaja. Kas oled valmis astuma varju?</p>
+            Me usume, et kõige siiramad vestlused peetakse küünlavalgel ja kõige julgemad mõtted sünnivad siis, kui tähistaevas on ainus tunnistaja. Kas oled valmis astuma varju?</p>
             <div class="cardimg7"></div>
         </div>
     </div>
     <blockquote>“Ainus koht, kuhu hing ihkab astuda öövarjus…”</blockquote>
     <span>— Salapärane külaline</span>
 </section>
+
 <footer id="Kontakt" class="footer">
     <div class="footer-left">
-        <h3>Tule Meile Külla</h3>
+        <h2>Tule Meile Külla</h2>
         <p>Lahtiolekuajad<br>E-P: 18:00 - 06:00</p>
         <p>Gagarini 9, Sillamäe</p>
         <p>+372 5818 7113</p>
         <p>info@oosill.ee</p>
     </div>
     <div class="footer-right">
-        <h3>Liitu Ööga</h3>
+        <h2>Liitu Ööga</h2>
         <form>
             <input type="email" placeholder="Sinu e-post">
             <button type="submit">Saada</button>
         </form>
     </div>
 </footer>
+
 <div id="bookingModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
@@ -123,9 +128,9 @@
         </form>
     </div>
 </div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    // 1. АНИМАЦИЯ ПОЯВЛЕНИЯ
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -136,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelectorAll('.card').forEach(card => {
         scrollObserver.observe(card);
     });
-    // 2. СТАТУС РАБОТЫ
+
     const now = new Date();
     const hour = now.getHours();
     const logo = document.querySelector('.logotip');
@@ -150,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
         status.style.color = '#ff0000';
     }
     logo.appendChild(status);
-    // 3. МОДАЛЬНОЕ ОКНО
+
     const modal = document.getElementById("bookingModal");
     const btns = document.querySelectorAll(".js-open-modal");
     const span = document.querySelector(".close");
@@ -180,17 +185,6 @@ document.addEventListener("DOMContentLoaded", function() {
         form.reset();
     }
 });
-    // Анимация появления карточек при скролле
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-        }
-    });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.card').forEach(card => observer.observe(card));
 </script>
 </body>
 </html>
-
